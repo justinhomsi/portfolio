@@ -1,7 +1,10 @@
+List of existing usernames and passwords for testing:
+
 username:	password:
 asmith		abc123
 bhoward		swordfish99
 
-testadmin	abc123
+List of existing admin accounts for testing:
 
-All optional business rules have been implemented
+username: password:
+testadmin	abc123
