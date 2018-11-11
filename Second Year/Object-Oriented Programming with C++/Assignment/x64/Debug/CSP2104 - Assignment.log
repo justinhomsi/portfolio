@@ -1,0 +1,7 @@
+﻿  Dictionary.cpp
+c:\users\jhomsi\documents\csp2104 - assignment-20170512t030337z-001\csp2104 - assignment\csp2104 - assignment\nounandverb.h(20): warning C4250: 'NounAndVerb': inherits 'Noun::Noun::isNoun' via dominance
+  c:\users\jhomsi\documents\csp2104 - assignment-20170512t030337z-001\csp2104 - assignment\csp2104 - assignment\noun.h(18): note: see declaration of 'Noun::isNoun'
+c:\users\jhomsi\documents\csp2104 - assignment-20170512t030337z-001\csp2104 - assignment\csp2104 - assignment\nounandverb.h(20): warning C4250: 'NounAndVerb': inherits 'Verb::Verb::isVerb' via dominance
+  c:\users\jhomsi\documents\csp2104 - assignment-20170512t030337z-001\csp2104 - assignment\csp2104 - assignment\verb.h(16): note: see declaration of 'Verb::isVerb'
+  CSP2104 - Assignment.vcxproj -> C:\Users\jhomsi\Documents\CSP2104 - Assignment-20170512T030337Z-001\CSP2104 - Assignment\x64\Debug\CSP2104 - Assignment.exe
+  CSP2104 - Assignment.vcxproj -> C:\Users\jhomsi\Documents\CSP2104 - Assignment-20170512T030337Z-001\CSP2104 - Assignment\x64\Debug\CSP2104 - Assignment.pdb (Full PDB)

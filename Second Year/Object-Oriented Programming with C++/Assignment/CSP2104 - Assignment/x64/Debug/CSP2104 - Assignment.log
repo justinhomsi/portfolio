@@ -1,0 +1,3 @@
+﻿  Noun.cpp
+Word.obj : error LNK2005: "public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl Word::get_definition(void)" (?get_definition@Word@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) already defined in Noun.obj
+C:\Users\justi\Google Drive\Uni Stuff\Year 2 - Semester 2\CSP2104 - Object-Oriented Programming with C++\CSP2104 - Assignment\x64\Debug\CSP2104 - Assignment.exe : fatal error LNK1169: one or more multiply defined symbols found
