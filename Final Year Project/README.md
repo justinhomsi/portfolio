@@ -7,3 +7,10 @@ The aim of the system is to produce an evolved behaviour tree which will control
 To run the program, please download the "User JARs" zip file and refer to the User Manual for instructions.<br />
 
 For a detailed breakdown of the program's code, and for instructions on how to install the system for modification of the source code, please refer to the Technical Manual. The source code is contained within the "MicroRTS_System_AI" zip file
+Please Note:<br />
+If you by any chance encounter the problem of a JRE mismatch:<br />
+
+    Right click the project and select configure build path<br />
+    Select the libraries tab<br />
+    Click the JRE System Library and click edit<br />
+    Select your local JRE or Workspace default JRE<br />
