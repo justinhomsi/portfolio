@@ -6,4 +6,4 @@ The aim of the system is to produce an evolved behaviour tree which will control
 
 To run the program, please download the "User JARs" zip folder and refer to the User Manual for instructions.<br />
 
-For a detailed breakdown of the program's code, please refer to the Technical Manual.
+For a detailed breakdown of the program's code, and for instructions on how to install the system for modification of the source code, please refer to the Technical Manual.
