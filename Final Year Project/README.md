@@ -10,7 +10,7 @@ For a detailed breakdown of the program's code, and for instructions on how to i
 Please Note:<br />
 If you by any chance encounter the problem of a JRE mismatch:<br />
 
-    Right click the project and select configure build path<br />
-    Select the libraries tab<br />
-    Click the JRE System Library and click edit<br />
-    Select your local JRE or Workspace default JRE<br />
+    Right click the project and select configure build path
+    Select the libraries tab
+    Click the JRE System Library and click edit
+    Select your local JRE or Workspace default JRE
