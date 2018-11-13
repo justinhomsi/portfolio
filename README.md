@@ -1,2 +1,2 @@
 # portfolio
-A collection of work completed during my university studies ordered by study year (first to final) and by unit
+A collection of work completed during my university studies ordered by study year, and by unit
