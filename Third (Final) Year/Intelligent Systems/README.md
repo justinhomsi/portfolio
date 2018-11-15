@@ -11,3 +11,5 @@ The controller does not employ the use of shields, as this was determined to be 
 
 Controllers developed by all groups within the unit were entered into a competition to determine which group's controller was the most effective.
 This competition involved 10 rounds with all developed controllers present. FuzzyControllerv2 had an overall ranking of first place, coming second in a couple of rounds.
+
+Note: Unfortunately I am unable to provide the Saucers game in order to test the controller as I did not write it
