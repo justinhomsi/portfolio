@@ -1,7 +1,19 @@
 #------------------------------------------------------------------
 import random
+import timeit
+
 # Class definitions
 
+A = []
+
+## Define function to make array
+def randArray(Array, n):
+    for i in range(0, n):
+        Array.insert(i, random.randint(0, 100))
+        
+randArray(A, 2000)
+
+bstCount = 0
 class Node:
     def __init__(self, key):
         self.right = None
@@ -9,6 +21,7 @@ class Node:
         self.data = key
 
     def insert(self, data):
+        global bstCount
         """
         Insert new node with data
 
@@ -18,15 +31,20 @@ class Node:
             if data < self.data:
                 if self.left is None:
                     self.left = Node(data)
+                    bstCount += 1
                 else:
                     self.left.insert(data)
+                    bstCount += 1
             elif data > self.data:
                 if self.right is None:
                     self.right = Node(data)
+                    bstCount += 1
                 else:
                     self.right.insert(data)
+                    bstCount += 1
         else:
             self.data = data
+            bstCount += 1
 
 
 class Tree:
@@ -44,9 +62,11 @@ def in_order(root):
     in_order(root.right)    
 
 def main():
-    a = ['a','g','h','j','i','o','p','r','e','w','t','b','n','m','z','s','y','c','k','q']
-    print("Unordered array: ", a, '\n')
-    bst(a)
+   bstTimeStart = timeit.default_timer()
+   bst(A)
+   bstTimeEnd = timeit.default_timer()
+   print("The BST comparison count is:", bstCount)
+   print("The BST completion time is:", (bstTimeEnd - bstTimeStart) * 1000)
     
 def bst(array):
     t = Tree()

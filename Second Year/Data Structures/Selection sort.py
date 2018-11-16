@@ -1,26 +1,13 @@
-import random
-
-A = []
-n = 100
-
-def randArray(array, n):
-    for i in range(0, n):
-        array.insert(i, random.randint(0, 100))
-
-def selectionSort(array, n):
-    for i in range(len(array)):
-        minimum = min(array[i:])
-        minimum_index = array[i:].index(minimum)
-        array[i + minimum_index] = array[i]
-        array[i] = minimum
-
-def main():
-    randArray(A, n)
-
-    selectionSort(A, n)
-
-    print(A)
-
-main()
-
-
+def selectionSort(aList):
+    # Sort aList[ ] into ascending order.      
+    for i in range( len( aList ) ):
+        least = i
+        for k in range(i+1 , len(aList)):
+            if aList[k] < aList[least]:
+                least = k
+        swap( aList, least, i )
+        
+def swap( A, x, y ):
+    tmp = A[x]
+    A[x] = A[y]
+    A[y] = tmp
