@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	public Transform mainCamera;
 	private Vector3 cameraStartPoint;
 	private Vector3 platformStartPoint;
-	public PlayerController thePlayer;
+	public PlayerController player;
 	private Vector3 playerStartPoint;
 
 	private PlatformDestroyer[] platformList;
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		platformStartPoint = platformGenerator.position;;
-		playerStartPoint = thePlayer.transform.position;
+		playerStartPoint = player.transform.position;
 		cameraStartPoint = mainCamera.transform.position;
 
 		scoreManager = FindObjectOfType<ScoreManager>();
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 	public void RestartGame () 
 	{
 		scoreManager.scoreIncreasing = false;
-		thePlayer.gameObject.SetActive(false);
+		player.gameObject.SetActive(false);
 		Time.timeScale = 0;
 		backgroundMusicSource.Stop();
 		
@@ -62,34 +62,13 @@ public class GameManager : MonoBehaviour {
 			platformList[i].gameObject.SetActive(false);
 		}
 
-		thePlayer.transform.position = playerStartPoint;
+		player.transform.position = playerStartPoint;
 		platformGenerator.position = platformStartPoint;
 		mainCamera.position = cameraStartPoint;
-		thePlayer.NormalMoveSpeed();
-		thePlayer.gameObject.SetActive(true);
+		player.NormalMoveSpeed();
+		player.gameObject.SetActive(true);
 
 		scoreManager.scoreCount = 0;
 		scoreManager.scoreIncreasing = true;
 	}
-
-	/*public IEnumerator RestartGameCo() {
-		scoreManager.scoreIncreasing = false;
-		thePlayer.gameObject.SetActive(false);
-		yield return new WaitForSeconds(0.5f);
-		platformList = FindObjectsOfType<PlatformDestroyer>();
-
-		for(int i = 0; i < platformList.Length; i++)
-		{
-			platformList[i].gameObject.SetActive(false);
-		}
-
-		thePlayer.transform.position = playerStartPoint;
-		platformGenerator.position = platformStartPoint;
-		GroundGenerator.position = groundStartPoint;
-		mainCamera.position = cameraStartPoint;
-		thePlayer.gameObject.SetActive(true);
-
-		scoreManager.scoreCount = 0;
-		scoreManager.scoreIncreasing = true;
-	} */
 }

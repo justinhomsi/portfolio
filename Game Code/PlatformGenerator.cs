@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class PlatformGenerator : MonoBehaviour {
 
-    public GameObject thePlatform;
+    public GameObject platform;
     public Transform generationPoint;
-    public float distanceBetweenPlatforms;
+    private float distanceBetweenPlatforms;
 
     private float platformWidth;
 
     public float distanceBetweenPlatformsMin;
     public float distanceBetweenPlatformsMax;
 
-    //public GameObject[] thePlatforms;
     private int platformSelector;
     private float[] platformWidths;
 
-    public ObjectPooler[] theObjectPools;
+    public ObjectPooler[] objectPools;
 
     private float minPlatformHeight;
     public Transform maxPlatformHeightPoint;
@@ -37,11 +36,10 @@ public class PlatformGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
-        platformWidths = new float[theObjectPools.Length];
+        platformWidths = new float[objectPools.Length];
 
-        for(int i = 0; i < theObjectPools.Length; i++) {
-            platformWidths[i] = theObjectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
+        for(int i = 0; i < objectPools.Length; i++) {
+            platformWidths[i] = objectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
         }
 
         minPlatformHeight = transform.position.y;
@@ -78,7 +76,7 @@ public class PlatformGenerator : MonoBehaviour {
         {
             distanceBetweenPlatforms = Random.Range(distanceBetweenPlatformsMin, distanceBetweenPlatformsMax);
 
-            platformSelector = Random.Range(0, theObjectPools.Length);
+            platformSelector = Random.Range(0, objectPools.Length);
 
             heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
 
@@ -104,7 +102,7 @@ public class PlatformGenerator : MonoBehaviour {
             {
                 transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetweenPlatforms, midPlatformHeightPoint.position.y, transform.position.z);
                 
-                GameObject midPlatform = theObjectPools[platformSelector].GetPooledObject();
+                GameObject midPlatform = objectPools[platformSelector].GetPooledObject();
 
                 midPlatform.transform.position = transform.position;
                 midPlatform.transform.rotation = transform.rotation;
@@ -124,9 +122,7 @@ public class PlatformGenerator : MonoBehaviour {
             }
             else
             {
-                //Instantiate(/* thePlatform */thePlatforms[platformSelector], transform.position, transform.rotation);
-
-                GameObject newPlatform = theObjectPools[platformSelector].GetPooledObject();
+                GameObject newPlatform = objectPools[platformSelector].GetPooledObject();
 
                 newPlatform.transform.position = transform.position;
                 newPlatform.transform.rotation = transform.rotation;
